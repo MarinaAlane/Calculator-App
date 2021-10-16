@@ -1,0 +1,58 @@
+/*Em CSS podemos alterar estilos por classe, tag ou id ("sessão") */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&display=swap');
+
+body {
+    background-color: rgb(136, 69, 69);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    color:rgb(197, 191, 175);
+    text-shadow: 0px 1px 2px black;
+}
+
+button {
+display: table-cell;
+height: 65px;
+width: 65px;
+align-items: center;
+justify-content: center;
+font-family: 'Fira Sans', sans-serif;
+margin-top: 3px;
+background-color: rgba(211, 148, 148, 0.746);;
+border: unset;
+box-shadow: 0px 1px 2px black;
+}
+
+button:hover {
+    background-color: rgb(197, 191, 175);
+}
+
+main {
+    width: 20%;
+    margin-left: 40%;
+    padding-top: 5%;
+}
+
+#visor {
+    /*display: flex;
+    height: 65px;
+    width: 195px;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: rgb(197, 191, 175);
+    border: unset;
+    box-shadow: 0px 1px 2px black;
+    margin-left: 80px;*/
+    float: left;
+height: 62px;
+width: 201px;
+margin-top: 5px;
+margin-right: 5px;
+background-color: rgb(226, 188, 188);
+border: unset;
+box-shadow: 0px 0px 2px black;
+    
+}
+
