@@ -20,7 +20,7 @@ width: 65px;
 align-items: center;
 justify-content: center;
 font-family: 'Fira Sans', sans-serif;
-margin-top: 2px;
+margin-top: 3px;
 background-color: rgba(211, 148, 148, 0.746);;
 border: unset;
 box-shadow: 0px 1px 2px black;
@@ -45,16 +45,14 @@ main {
     border: unset;
     box-shadow: 0px 1px 2px black;
     margin-left: 80px;*/
-    display: table-cell;
-height: 65px;
-width: 65px;
-/*align-items: center;
-justify-content: center;*/
-font-family: 'Fira Sans', sans-serif;
-margin-top: 2px;
-background-color: rgba(211, 148, 148, 0.746);;
+    float: left;
+height: 62px;
+width: 201px;
+margin-top: 5px;
+margin-right: 5px;
+background-color: rgb(226, 188, 188);
 border: unset;
-box-shadow: 0px 1px 2px black;
+box-shadow: 0px 0px 2px black;
     
 }
 
