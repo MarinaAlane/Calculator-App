@@ -15,28 +15,14 @@ h1 {
 
 main {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 24.5%);
     grid-template-rows: repeat(5, 20%);
     grid-gap:1px;
     max-width: 33%;
     margin-left: 33%;
-    border: 1px solid;
-    /*
-    padding-top: 5%;
-    align-items: center;
-    */
 }
 
 .num {
-
-/*
-flex: 1 1 auto;
-margin-top: 3px;
-align-items: center;
-justify-content: center;
-height: 65px;
-
-*/
 padding:5%;
 margin: 1px;
 font-family: 'Fira Sans', sans-serif;
@@ -51,26 +37,22 @@ button:hover {
 
 
 #visor {
-    /*display: flex;
-    height: 65px;
-    width: 195px;
-    font-family: 'Fira Sans', sans-serif;
-    background-color: rgb(197, 191, 175);
-    border: unset;
-    box-shadow: 0px 1px 2px black;
-    margin-left: 80px;
-    height: 62px;
-    
-    margin-top: 5px;
-    margin-right: 5px;
-    */
-    
+    position: relative;
     grid-column: 1/4;
     grid-row: 5/5;
-    padding: 5%;
+    padding: 1px;
     background-color: rgb(226, 188, 188);
     border: unset;
     box-shadow: 0px 0px 2px black;
+    white-space: nowrap;
+    overflow: hidden;
     
+}
+
+#visorText {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.4em;
 }
 

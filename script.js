@@ -1,12 +1,12 @@
-let visorText = document.getElementById("visor");
+let visorText = document.getElementById("visorText");
 
 const addText = function(calc_input){
-    visorText.innerHTML = visorText.innerHTML.trimEnd().concat(calc_input);
+    visorText.innerText = visorText.innerText.trimEnd().concat(calc_input);
 }
 
 const clearAll = function(){
     //window.alert('funciona!')
-    visorText.innerHTML = '&nbsp;';
+    visorText.innerText = '';
 }
 
 //visor.innerText = "Wow!"
