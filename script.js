@@ -9,9 +9,6 @@ const clearAll = function(){
     visorText.innerText = '';
 }
 
-//visor.innerText = "Wow!"
-// visor.append("What?!")
-
 /* 
 Execução das operações.
 Etapas:
@@ -21,7 +18,13 @@ Etapas:
 let teste = '1+2*2+2*3';
 let multiplicacoes = teste.match(/\d+\*\d+/g);
 console.log( 
+    multiplicacoes = 
     multiplicacoes.map(i => i .split('*')). // array de arrays com conjuntos de numeros
     map(n => n.flatMap(nn => parseFloat(nn))). // transformar strings em numeros
     map(m => m.reduce((mm1, mm2) => mm1*mm2)) // fazer as multiplicações de cada bloco
     )
+console.log(multiplicacoes)
+
+//2- Remontar expressão substituindo resultados das multiplicações
+console.log(multiplicacoes.reduce((c,m) => c.replace(/\d+\*\d+/,m),teste))
+
