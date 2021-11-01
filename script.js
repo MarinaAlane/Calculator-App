@@ -38,15 +38,8 @@ teste = divisoes.reduce((c,m) => c.replace(/\d+\/\d+/,m),teste);
 console.log(teste)
 
 //4- Somas e subtrações
-
-let somas = teste.match(/\+\d+|^\d/g);
+let somasSubtr = teste.match(/\+\d+|^\d+|\-\d+/g);
 console.log(
-    somas.map(a => parseFloat(a.replace("+",""))).
+    somasSubtr.map(a => parseFloat(a.replace("+",""))).
     reduce((b,c) => b+c)
     );
-
-let subtracoes = teste.match(/\-\d+/g);
-console.log(
-        subtracoes.map(a => parseFloat(a)).
-        reduce((b,c) => b+c)
-        );
