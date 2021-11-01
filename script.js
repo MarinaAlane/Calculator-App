@@ -15,16 +15,38 @@ Etapas:
 1- Encontrar e fazer multiplicações
 */
 
-let teste = '1+2*2+2*3';
+let teste = '1+2*2+2*3/2-1';
 let multiplicacoes = teste.match(/\d+\*\d+/g);
-console.log( 
-    multiplicacoes = 
-    multiplicacoes.map(i => i .split('*')). // array de arrays com conjuntos de numeros
+ 
+multiplicacoes = 
+    multiplicacoes.map(i => i.split('*')). // array de arrays com conjuntos de numeros
     map(n => n.flatMap(nn => parseFloat(nn))). // transformar strings em numeros
-    map(m => m.reduce((mm1, mm2) => mm1*mm2)) // fazer as multiplicações de cada bloco
-    )
-console.log(multiplicacoes)
+    map(m => m.reduce((mm1, mm2) => mm1*mm2)); // fazer as multiplicações de cada bloco
+console.log(multiplicacoes);
 
 //2- Remontar expressão substituindo resultados das multiplicações
-console.log(multiplicacoes.reduce((c,m) => c.replace(/\d+\*\d+/,m),teste))
+teste = multiplicacoes.reduce((c,m) => c.replace(/\d+\*\d+/,m),teste);
+console.log(teste)
 
+//3 -Repetir processo para divisões
+let divisoes = teste.match(/\d+\/\d+/g);
+divisoes =
+    divisoes.map(i => i.split('/')). 
+        map(n => n.flatMap(nn => parseFloat(nn))). 
+        map(m => m.reduce((mm1, mm2) => mm1/mm2));
+teste = divisoes.reduce((c,m) => c.replace(/\d+\/\d+/,m),teste);
+console.log(teste)
+
+//4- Somas e subtrações
+
+let somas = teste.match(/\+\d+|^\d/g);
+console.log(
+    somas.map(a => parseFloat(a.replace("+",""))).
+    reduce((b,c) => b+c)
+    );
+
+let subtracoes = teste.match(/\-\d+/g);
+console.log(
+        subtracoes.map(a => parseFloat(a)).
+        reduce((b,c) => b+c)
+        );
