@@ -9,6 +9,10 @@ const clearAll = function(){
     visorText.innerText = '';
 }
 
+const showResult = function(result){
+    visorText.innerText = result;
+}
+
 /* 
 Execução das operações.
 Etapas:
@@ -66,8 +70,8 @@ const equal = function(){
 
     if(expressao.match(/^\d+\+\d+|^\d+-\d+/)){
     let somasSubtr = expressao.match(/\+\d+|^\d+|\-\d+/g);
-    return somasSubtr.map(a => parseFloat(a.replace("+",""))).
-    reduce((b,c) => b+c);
+     showResult(somasSubtr.map(a => parseFloat(a.replace("+",""))).
+    reduce((b,c) => b+c));
     } else {
         return expressao
     }
