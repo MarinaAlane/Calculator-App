@@ -43,3 +43,35 @@ console.log(
     somasSubtr.map(a => parseFloat(a.replace("+",""))).
     reduce((b,c) => b+c)
     );
+
+const equal = function(){
+    let expressao = visorText.innerText;
+    if (expressao.match(/\*/)){
+        multiplicacoes = expressao.match(/\d+\*\d+/g);
+        multiplicacoes = 
+            multiplicacoes.map(i => i.split('*')). // array de arrays com conjuntos de numeros
+                map(n => n.flatMap(nn => parseFloat(nn))). // transformar strings em numeros
+                map(m => m.reduce((mm1, mm2) => mm1*mm2)); // fazer as multiplicações de cada bloco
+        expressao = multiplicacoes.reduce((c,m) => c.replace(/\d+\*\d+/,m),expressao);
+    }
+
+    if (expressao.match('\/')){
+        let divisoes = expressao.match(/\d+\/\d+/g);
+        divisoes =
+            divisoes.map(i => i.split('/')). 
+                map(n => n.flatMap(nn => parseFloat(nn))). 
+                map(m => m.reduce((mm1, mm2) => mm1/mm2));
+        expressao = divisoes.reduce((c,m) => c.replace(/\d+\/\d+/,m), expressao);
+    }
+
+    if(expressao.match(/^\d+\+\d+|^\d+-\d+/)){
+    let somasSubtr = expressao.match(/\+\d+|^\d+|\-\d+/g);
+    return somasSubtr.map(a => parseFloat(a.replace("+",""))).
+    reduce((b,c) => b+c);
+    } else {
+        return expressao
+    }
+    
+}
+
+
