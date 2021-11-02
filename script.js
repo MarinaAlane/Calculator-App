@@ -43,10 +43,11 @@ const equal = function(){
     showResult(somasSubtr.
         map(a => parseFloat(a.replace("+",""))).
         reduce((b,c) => b+c));
+    } else 
+        if(expressao.match(/^\d+/)) {
+            showResult(expressao);
     } else {
         return expressao
     }
-    
 }
-
 
