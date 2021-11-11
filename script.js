@@ -33,7 +33,7 @@ const divisao = function(expressao){
 }
 
 const somaSubtracao = function(expressao){
-    let somasSubtr = expressao.match(/\+\d+|^\d+|\-\d+/g);
+    let somasSubtr = expressao.match(/\+\d+(?:\.\d*)?|^\d+(?:\.\d*)?|\-\d+(?:\.\d*)?/g);
     return somasSubtr.
     map(a => parseFloat(a.replace("+",""))).
     reduce((b,c) => b+c)
@@ -41,7 +41,7 @@ const somaSubtracao = function(expressao){
 
 //Execução das operações.
 const equal = function(){
-    let expressao = visorText.innerText;
+    let expressao = visorText.innerText.replaceAll(',','.');
     //Se houver multiplicação, fazer
     if (expressao.match(/\*/)){
         expressao = multiplicacao(expressao);
@@ -52,7 +52,7 @@ const equal = function(){
     }
     // Somas e subtrações em uma tacada só.
     // Roda se houver pelo menos uma expressão completa de soma ou subtração
-    if(expressao.match(/^\d+\+\d+|^\d+-\d+/)){
+    if(expressao.match(/^\d+(?:\.\d*)?\+\d+(?:\.\d*)?|^\d+(?:\.\d*)?-\d+(?:\.\d*)?/)){
     // mostra resultado no visor com showResult
     showResult(somaSubtracao(expressao));
     } else 
@@ -62,3 +62,4 @@ const equal = function(){
         return expressao
     }
 }
+console.log('2.5+2.5'.match(/^\d+(?:\.\d*)?\+\d+(?:\.\d*)?|^\d+(?:\.\d*)?-\d+(?:\.\d*)?/))
